@@ -20,8 +20,32 @@ $P_6^6 * 4 * 2 * (1*7 + 2*6 + 3*5 + 4*4 + 5*3 + 6*2 + 7*1)$. Average is given by
 
 
 
-See also: =problem4.cpp= for brutal force calculation. This is to verify the above solution is correct. The output of the program is below
+See also: [[https://github.com/xuanni/Problems/blob/master/problem4.cpp][problem4.cpp]] for brutal force calculation. This is to verify the above solution is correct. The output of the program is below
 #+BEGIN_SRC bash
 brutal force method: total = 483840, number of permutations = 40320, average = 12
 analytical method: average = 12
 #+END_SRC
+
+* Problem 5
+Find all real \(x\) such that
+
+\begin{equation}
+log_{2x}(48\sqrt[3]{3}) = log_{3x}(162\sqrt[3]{2})
+\end{equation}
+
+** Solution
+\begin{equation}
+\frac{\ln(48\sqrt[3]{3})}{\ln(2) + \ln(x)} = \frac{\ln(162\sqrt[3]{2})}{\ln(3) + \ln(x)}
+\end{equation}
+
+\begin{equation}
+\ln(x) = \frac{\ln(3)\cdot \ln(48\sqrt[3]{3}) - \ln(2)\cdot \ln(162\sqrt[3]{2})}{\ln(162\sqrt[3]{2}) - \ln(48\sqrt[3]{3})}
+\end{equation}
+
+
+\begin{eqnarray}
+x &=& \exp\left[ \frac{\ln(3)\cdot \ln(48\sqrt[3]{3}) - \ln(2)\cdot \ln(162\sqrt[3]{2})}{\ln(162\sqrt[3]{2}) - \ln(48\sqrt[3]{3})}\right]\\
+&=& \exp\left[\frac{\ln(3)\cdot\ln(3)-\ln(2)\cdot\ln(2)}{2(\ln(3)-\ln(2))}\right]\\
+&=& \exp\left[\frac{\ln(6)}{2}\right]\\
+x&=& \sqrt{6}
+\end{eqnarray}
