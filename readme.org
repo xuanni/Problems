@@ -95,12 +95,13 @@ In how many ways can 9 be written as the sum of one or more positive odd integer
 - \(9=9\)
 - \(9=3+3+3\)
 - \(9=1+3+5\)
+- \(9=1+1+7\)
 - \(9=1+1+1+3+3\)
 - \(9=1+1+1+1+5\)
 - \(9=1+1+1+1+1+1+3\)
 - \(9=1+1+1+1+1+1+1+1+1\)
 
-So answer is (E)
+So answer is (A)
 
 ** Problem 6
 The sum of the digits of the positive integer \(n\) is 123. The sum of the digits of \(2n\) is 66. The digits of \(n\) include two 3s, six 7s, \(p\) 5s, \(q\) 6s and no other digits. What is \(p^2+q^2\)?
