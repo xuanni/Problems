@@ -49,3 +49,27 @@ x &=& \exp\left[ \frac{\ln(3)\cdot \ln(48\sqrt[3]{3}) - \ln(2)\cdot \ln(162\sqrt
 &=& \exp\left[\frac{\ln(6)}{2}\right]\\
 x&=& \sqrt{6}
 \end{eqnarray}
+
+
+* <2024-07-21 Sun>
+
+** problem 5
+In how many ways can 9 be written as the sum of one or more positive odd integers? (Order of the integers does not matter.)
+
+\begin{*equation}
+\begin{matrix}
+ (A) 8 & (B) 6 & (C) 5 & (D) 9 & (E) 7
+\end{matrix}
+\end{*equation}
+
+*** Solution
+9 can only be written as sum of odd number of positive odd integers, so we have several options.
+- \(9=9\)
+- \(9=3+3+3\)
+- \(9=1+3+5\)
+- \(9=1+1+1+3+3\)
+- \(9=1+1+1+1+5\)
+- \(9=1+1+1+1+1+1+3\)
+- \(9=1+1+1+1+1+1+1+1+1\)
+
+So answer is (E)
