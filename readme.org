@@ -53,6 +53,32 @@ x&=& \sqrt{6}
 \end{eqnarray}
 
 
+* Problem 6
+Dikshant writes down \(2k+1\) positive integers in a list where \(k\) is a positive integer. The integers are not necessarily all distinct, but there are at least three distinct integers in the list. The average of the all \(2k+1\) integers is itself an integer and appears at least once in the list. The average of the smallest \(k+1\) integers in the list and the average of the largest \(k+1\) integers in the list by less than \(1/2025\). Determine the smallest possible value of \(k\).
+
+Clarification: if \(m_1\) is the average of the smallest \(k+1\) integers and \(m_2\) is the average of the largest \(k+1\) integers, then the condition is \(|m_1-m_2| < 1/2025\).
+
+
+** Solution
+Let all integers be ranked from the smallest to the largest in the list as: \(a_1\), \(a_2\), ..., \(a_{2k+1}\). So the number \(a_{k+1}\) is the median of the array.
+
+\begin{equation}\label{eq:m2m1}
+m_2 -m_1&=& \frac{\sum_{i=1}^{k+1}(a_{i+k}-a_i)}{k+1} < \frac{1}{2025}.
+\end{equation}
+
+In order for the condition to be true, the sum from \(i\) to \(k+1\) has to be very small compared to the dinominator \(k+1\). However, each term in the sum, \(a_{i+k}-a_i\) is an positive integer or zero, and there are \(k+1\) terms of them. So many of them has to be 0 with the exception of a few very small positive values. This means, the number of distinct value in the list has to be small. In fact, the fewer number of distinct values, the more likely the condition could be satisfied, and the more likely \(k\) could be small.
+
+Now assume there are only 3 distinct values, \(a < b < c\). According to the problem statement, the average of all values is also an integer and it's in the list. Therefore, the mean must be the value \(b\). In order for the mean to be integer, the number of value \(a\) must be the same as the number of value \(c\). Then let's assume there are \(l\) values of \(a\) and \(c\), and the number of value \(b\) becomes \(2k+1-2l\). So coming back to the Eq. (\ref{eq:m2m1}),
+
+\begin{equation}\label{eq:m2m12}
+m_2 -m_1&=& \frac{l(c-a)}{k+1} < \frac{1}{2025}.
+\end{equation}
+
+The smallest the values for \(l\) and \(c-a\) are 1 and 2, respectively. Plug these in we get
+
+\begin{equation}
+\boxed{k_{min} = 4050}
+\end{equation}
 * <2024-07-21 Sun>
 
 ** Problem 5
