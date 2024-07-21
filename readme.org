@@ -1,3 +1,5 @@
+#+LATEX_HEADER: \usepackage[margin=1in]{geometry}
+
 * Problem 4
 Find the average of function $f(\sigma) = |a_1 - a_2| + |a_3 - a_4| + |a_5 - a_6| + |a_7 - a_8|$, where $\sigma$ is a permutation of $(a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8)$.
 
@@ -53,7 +55,7 @@ x&=& \sqrt{6}
 
 * <2024-07-21 Sun>
 
-** problem 5
+** Problem 5
 In how many ways can 9 be written as the sum of one or more positive odd integers? (Order of the integers does not matter.)
 
 \begin{*equation}
@@ -73,3 +75,42 @@ In how many ways can 9 be written as the sum of one or more positive odd integer
 - \(9=1+1+1+1+1+1+1+1+1\)
 
 So answer is (E)
+
+** Problem 6
+The sum of the digits of the positive integer \(n\) is 123. The sum of the digits of \(2n\) is 66. The digits of \(n\) include two 3s, six 7s, \(p\) 5s, \(q\) 6s and no other digits. What is \(p^2+q^2\)?
+
+\begin{*equation}
+\begin{matrix}
+ (A) 106 & (B) 109 & (C) 160 & (D) 58 & (E) 72
+\end{matrix}
+\end{*equation}
+
+*** Solution
+Let \(d_i(n)\) be the \(i\)-th digit of n.
+
+\begin{eqnarray}
+n & = & \sum_{i=1}^{2+6+p+q} d_i(n)\cdot 10^{i-1}\\
+& = & \sum_{p} 5\cdot 10^{i-1} +\sum_{q} 6\cdot 10^{i-1} +\sum_{2} 3\cdot 10^{i-1} +\sum_{6} 7\cdot 10^{i-1}
+\end{eqnarray}
+
+\begin{eqnarray}
+2n & = & \sum_{p} 1\cdot 10^{i} +\sum_{q} 1\cdot 10^{i} + \sum_{q} 2\cdot 10^{i-1} +\sum_{2} 6\cdot 10^{i-1} +  \sum_{6} 1\cdot 10^{i} + \sum_{6} 4\cdot 10^{i-1}
+\end{eqnarray}
+
+Adding all digits up:
+
+\begin{equation}
+\sum_{i} d_i(n) = 5p + 6q + 2\cdot3 +6\cdot 7 = 123
+\end{equation}
+
+\begin{equation}
+\sum_{i} d_i(2n) = p + q + 2q + 2\cdot6 +6\cdot 1 + 6\cdot 4 = 66
+\end{equation}
+
+We get \(p = 9\), \(q =5\), so
+
+\begin{equation}
+\boxed{p^2 + q^2 = 106}
+\end{equation}
+
+Answer is (A)
