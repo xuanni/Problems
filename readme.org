@@ -235,3 +235,78 @@ So \(a_6\) is your choice, you can set it as 0, no move, which is the minimum ef
 
 
 ** problem 6 solution
+
+Let the real number \(x\) be \(a/b\) where \(a\) and \(b\) don't share any common factor, and \(a \geq b\). Let \(a = q\cdot b + r\), and \(r\in[0, b)\), so
+
+\begin{eqnarray}
+x& = &\frac{q\cdot b + r}{b}\\
+\lfloor x \rfloor&=& q\\
+n &=& q\left(\frac{q\cdot b + r}{b}\right)
+\end{eqnarray}
+
+In order for \(n\) to be an integer, \(q\) must be multiple of \(b\), so let \(q = p\cdot b\). So
+
+\begin{eqnarray}
+x& = &\frac{p\cdot b^2 + r}{b}\\
+\lfloor x \rfloor&=& p\cdot b\\
+n &=& p\left(p\cdot b^2 + r\right)
+\end{eqnarray}
+
+Here,\(p\) is a positive integer.  \(b = 1, 2, 3, ...\) and \(r \in [0, b)\).
+
+*** Case 1)
+If \(r = 0\), \(x = \lfloor x \rfloor\), so \(n\) is a square number \(n = x^2\in [1,2024]\). There are 44 solutions of \(n\).
+*** Case 2)
+If \(r > 0\), \(b = 2, 3, 4, ...\). When \(b =2\), \(r = 1\)
+
+\begin{equation}
+n = 4p^2 + p \leq 2024.\\
+\end{equation}
+
+
+Solve this and get, \(p\leq 22\). There are 22 solutions of \(n\).
+
+When \(b = 3\), \(r = 1,2\)
+
+\begin{equation}
+n =9p^2 + r\cdot p \leq 2024
+\end{equation}
+
+Solve this and get
+
+\begin{equation}
+p = \frac{-r +\sqrt{r^2 + 4\cdot 9\cdot 2024}}{18}
+\end{equation}
+
+For both r values (0,1), we get \(p \leq 14\)
+
+When \(b=4\), \(r = 1,2,3\) will be similar, and for all \(b\) that can make \(n <=2024=\), we have general solution:
+
+\begin{eqnarray}
+p &\leq& \frac{1}{2b}\left[{\sqrt{(\frac{r}{b})^2 + 8096} - \frac{r}{b}\right]\\
+&=& \frac{1}{2b}\left[{\sqrt{8096}\left[\frac{(r/b)^2}{8096} + 1\right]^{\frac{1}{2}} - \frac{r}{b}\right]\\
+\end{eqnarray}
+
+Using approximation, \((1+x)^n\approx 1+n\cdot x\), when \(x\ll 1\)
+
+\begin{eqnarray}
+p_{max}&\approx& \frac{1}{2b}\left[{\frac{(r/b)^2}{\sqrt{8096}\cdot 2} + \sqrt{8096} - \frac{r}{b}\right]\\
+&\approx&\frac{89.977775...-r/b}{2b}
+\end{eqnarray}
+
+During the last approximation, I dropped the \(r/b\)^2 term, also you can  drop the \(r/b\) term now. This means \(q_{max} = p_{max}\cdot b = 44\). This also means, when you pick a \(b\) value, the maximum of \(p\) value is given by \(44/b\). If you use this to test the above cases we have done, you will find it fit well. E.g., when \(b=2\), \(p_{max} = 44/2 = 22\) and when \(b=3\), \(p_{max} = 44/3= 14\).
+
+Ok, we've come so far, let's summize the answer. When \(r > 0\), \(b\) can be any values between 2 and 44. And the corresponding maximum \(p\) value is \(44/b\). And don't forget the \(r\) can be anything between \(1\) and \(b-1\). So in total we have number of \(n\)
+
+
+\begin{eqnarray}
+N &=&22 + 14\cdot 2 + 11\cdot 3 + 8\cdot4 + 7\cdot5 + 6\cdot6+5\cdot7+4\cdot8+4\cdot9+4\cdot10\\
+& & + 3\cdot(11+12+13) +2\cdot(14+15+ ... +21) + 1\cdot(22 + ... + 43)\\
+&=& 1432
+\end{eqnarray}
+
+And lastly, add Case 1) and Case 2), we have total number of qualifying \(n\) to be
+
+\begin{equation}
+\boxed{N=1476}
+\end{equation}
