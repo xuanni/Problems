@@ -199,9 +199,39 @@ x &=& P(c_1) + P(d_1) + P(e_1) + \frac{1}{8}\cdot x + P(c_2) + P(d_2) + \frac{1}
 
 Solve x and you get \(x=13/40\). Plug x into Eq.(\ref{eq:p2downs}) you get the probability of 2 downs is  \(7/10\). So the probability of getting last flip up is \({\bf30\%}\).
 
-
-
-
-
 ** problem 5 solution
+We can solve this by using a table, let's assume the top right vertex is labeled 1, and then clock wise label all vertices as 2,..., 6, so that the top left is 6. Also assume the number of moves on vertex \(i\) is \(a_i\), and the final value for the vertex is \(n_i\)
+
+  | n_1 | n_2 | n_3 | n_4 | n_5 | n_6 |
+  |-----+-----+-----+-----+-----+-----|
+  | 1   | a_1 |     |     | 1   | a_1 |
+  | a_2 |     | a_2 |     |     |     |
+  |     | a_3 |     | a_3 |     |     |
+  |     |     | a_4 |     | a_4 |     |
+  |     |     |     | a_5 |     | a_5 |
+  | a_6 |     |     |     | a_6 |     |
+
+The purpose is to let all \(n_i\) be equal, so we have
+
+\begin{equation}
+n = 1 + a_2+a_6 = a_1 + a_3 = a_2 + a_4 = a_3+a_5 = 1+a_4+a_6 = a_1+a_5
+\end{equation}
+
+We have 5 equations but 6 variables. So we can solve them all except one of them. Let's treat \(a_6\) as a special one, because it is serounded by 2 value 1's, and express all other variables as functions of \(a_6\).
+
+We can easily get two equations by solving the above equations:
+
+\begin{equation}
+a_1=a_2=a_3=a_4=a_5
+\end{equation}
+
+And
+
+\begin{equation}
+a_1 = a_6 + 1
+\end{equation}
+
+So \(a_6\) is your choice, you can set it as 0, no move, which is the minimum effort here. In this case, all other \(a_i\) will be 1. And \(n = 2\), so all vertices will have a value of 2.
+
+
 ** problem 6 solution
