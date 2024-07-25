@@ -141,3 +141,29 @@ We get \(p = 9\), \(q =5\), so
 \end{equation}
 
 Answer is (A)
+
+* <2024-07-23 Tue>
+
+
+** problem 1 solution
+Write \(n\) as \(3k-2,3k-1,3k\), where \(k=1,674\). You can see 3k-2 and 3k-1 cannot give integer result for \(n(n+3)/27\). Only 3k can.
+
+\begin{equation}
+\left.\frac{n(n+3)}{27} \right|_{n=3k}= \frac{k(k+1)}{3}
+\end{equation}
+
+Now let k = 3l or 3l-1 will give integer result. So number of k (or n) is floor(674/3)*2 + 1 = 449. The last 1 is when k = 674.
+
+** problem 2 solution
+** problem 3 solution
+\(\sin(x) \leq 1\), so when x = 2024, sin(x) has 5.62 periods. Each period has 2 intersections. So that's 12 intersections, except the origin. Also consider negative part, so total number of intersections is 23.
+
+#+CAPTION: sin(x) and x/2024
+#+ATTR_LaTeX: scale=0.75
+#+ATTR_HTML: scale=0.75
+#+NAME: fig:sec3_3
+[[./section3_3.jpg]]
+
+** problem 4 solution
+** problem 5 solution
+** problem 6 solution
