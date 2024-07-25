@@ -165,5 +165,43 @@ Now let k = 3l or 3l-1 will give integer result. So number of k (or n) is floor(
 [[./section3_3.jpg]]
 
 ** problem 4 solution
+Some facts you need to know:
+- The probability of Sebastian going on forever is 1/2 to the power of infinity, so this number is infinitely small. So He is going to stop
+- That means either he ends up with 2 downs or 3 ups, no other choices.
+- The question asks the probability he ends up with an up, which also means to ask the probability of 3 ups case. If we figure out 2 downs case's probability, then 1 minus that value gives the probability of 3 ups case.
+- Why would we do the 2 downs case instead of doing 3 ups case directly? This is because it is easier.
+
+So let's figure out 2 downs case's probability. He will have one of these sequences:
+
+\begin{eqnarray}
+\downarrow\downarrow(a) \ \rightarrow \ \uparrow\downarrow\downarrow(b) & & \rightarrow \  \uparrow\uparrow\downarrow\downarrow(c_1) \ \rightarrow \ \downarrow\uparrow\uparrow\downarrow\downarrow(d_1) \ \rightarrow \  \uparrow\downarrow\uparrow\uparrow\downarrow\downarrow(e_1) \ \rightarrow ... \\
+& & \rightarrow \ \downarrow\uparrow\downarrow\downarrow(c_2) \ \rightarrow \ \uparrow\downarrow\uparrow\downarrow\downarrow(d_2) \ \rightarrow ...
+\end{eqnarray}
+
+In the above diagram I placed a mark beside each possibility. E.g., \((a)\) means Sebastian could just flip 2 times and got 2 downs and he immediately stops. \((b)\) means he could flip 3 times and the first one got up and last two got downs. So on and so forth.
+
+Notice that I stopped at \((e_1)\) and \((d_2)\) because the first 2 flips are both up and down, same as case \((b)\). So both \((e_1)\) and \((d_2)\) will unfold or multiply as if they were \((b)\), but with more flips at the end that's all. This is a recursive and infinite sequence.
+
+Let's assume the total probability of all the configurations after \((b)\) in the above diagram is \(x\), and we can write to total probability for 2 downs case as:
+
+\begin{eqnarray}\label{eq:p2downs}
+\frac{1}{4}+\frac{1}{8} + x
+\end{eqnarray}
+
+Notice that all the configurations added up after \((e_1)\) is nothing but \(x\times 1/8\)  and all the configurations after \((d_2)\) is just \(x\times 1/4\)
+
+So we have
+
+\begin{eqnarray}
+x &=& P(c_1) + P(d_1) + P(e_1) + \frac{1}{8}\cdot x + P(c_2) + P(d_2) + \frac{1}{4}\cdot x\\
+&=& \frac{1}{16} + \frac{1}{32} + \frac{1}{64} + \frac{1}{8}\cdot x + \frac{1}{16} + \frac{1}{32} + \frac{1}{4}\cdot x
+\end{eqnarray}
+
+Solve x and you get \(x=13/40\). Plug x into Eq.(\ref{eq:p2downs}) you get the probability of 2 downs is  \(7/10\). So the probability of getting last flip up is \({\bf30\%}\).
+
+
+
+
+
 ** problem 5 solution
 ** problem 6 solution
