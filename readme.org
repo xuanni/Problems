@@ -155,6 +155,21 @@ Write \(n\) as \(3k-2,3k-1,3k\), where \(k=1,674\). You can see 3k-2 and 3k-1 ca
 Now let k = 3l or 3l-1 will give integer result. So number of k (or n) is floor(674/3)*2 + 1 = 449. The last 1 is when k = 674.
 
 ** problem 2 solution
+It's easy to know that if there are 0,1 stones left, Mike loses, but if there are 2,3,4 stones left, Mike wins. Next number is 5. Mike can win by picking 4 and leave 1 to Ian. Number 6 no matter what number Mike picks, Ian can match that with (Mike2, Ian4) (Mike3, Ian3) (Mike4, Ian2). So as long as Ian makes sure Mike's pick and Ian's pick add up to 6, Ian wins. So 6 is not good for Mike. Then 7, no matter what number Mike picks first, be it 2,3, 4, what's left is 5, 4, 3, which is a good number for the next player, so 7 is not good for Mike, either.
+
+From now on (\(n\geq8\)), Mike can use some strategy that Ian has used, which is picking a number that adds with Ian's number to 6. If Ian picks 2, Mike counters with 4. If Ian picks 3, Mike picks 3. If Ian picks 4, Mike picks 2. Now to win for 8 stones, Mike picks 2 first, leaving 6 stones. And then Mike applies that strategy to win.
+
+For 9, 10. Mike just picks 3 and 4 as first move, respectively, leaving also 6 stones and applies that strategy.
+
+So if \(n = 6k + 2,3,4\) then it is good for Mike. Then what's left is \(n =6m + 0,1\) are similar to 6, 7, which are not good. \(n=6m + 5\) is good for Mike, he can pick 4 first, then apply matching strategy leaving only 1 for Ian.
+
+To summize, good numbers of stones for Mike are:
+
+\begin{equation}
+n = 6m+ 2,3,4,5, n\in[1,100], n\in{\bf Z}
+\end{equation}
+
+
 ** problem 3 solution
 \(\sin(x) \leq 1\), so when x = 2024, sin(x) has 5.62 periods. Each period has 2 intersections. So that's 12 intersections, except the origin. Also consider negative part, so total number of intersections is 23.
 
