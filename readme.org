@@ -325,3 +325,11 @@ And lastly, add Case 1) and Case 2), we have total number of qualifying \(n\) to
 \begin{equation}
 \boxed{N=1476}
 \end{equation}
+* <2024-08-01 Thu>
+** Problem 6
+Find number of integer solutions \([x,y,z,\omega]\) between -10 and 10, inclusive, such that
+
+\begin{eqnarray}
+x + y + z &=& \omega\\
+\frac{1}{x} + \frac{1}{y} + \frac{1}{z} &=& \frac{1}{\omega}
+\end{eqnarray}
